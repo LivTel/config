@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.5 2004-10-13 20:01:45 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.6 2004-11-22 12:23:50 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -30,7 +30,7 @@ top: config
 config: $(CONFIG_OBJS)
 
 $(BINDIR)/%.properties: %.properties
-	$(CP) $< $@
+	$(CP) -f $< $@
 
 checkout:
 	$(CO) $(CO_OPTIONS) $(CONFIG_SRCS)
@@ -49,6 +49,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.5  2004/10/13 20:01:45  cjm
+# Added supircam2.
+#
 # Revision 1.4  2004/08/06 13:27:52  cjm
 # Added backup target.
 #
