@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.3 2004-07-06 18:15:48 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.4 2004-08-06 13:27:52 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -44,8 +44,13 @@ tidy:
 	-$(RM) $(RM_OPTIONS) $(TIDY_OPTIONS)
 
 backup: tidy
+	tar cvf $(BACKUP_DIR)/config.tar .
+	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.3  2004/07/06 18:15:48  cjm
+# Added nuview1 files.
+#
 # Revision 1.2  2004/05/24 18:28:21  cjm
 # Added ftccd2/dillcamsouth.
 #
