@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.2 2004-05-24 18:28:21 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.3 2004-07-06 18:15:48 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -20,7 +20,8 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	supircam1.day_calibrate_state.properties supircam1.twilight_calibrate_state.properties \
 	supircam.current.filter.properties supircam.filter.properties \
 	ftspec1.day_calibrate_state.properties ftspec1.twilight_calibrate_state.properties \
-	spectrograph.day_calibrate_state.properties spectrograph.twilight_calibrate_state.properties
+	spectrograph.day_calibrate_state.properties spectrograph.twilight_calibrate_state.properties \
+	nuview1.day_calibrate_state.properties nuview1.twilight_calibrate_state.properties
 CONFIG_OBJS	= $(CONFIG_SRCS:%.properties=$(BINDIR)/%.properties)
 
 top: config
@@ -45,6 +46,9 @@ tidy:
 backup: tidy
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.2  2004/05/24 18:28:21  cjm
+# Added ftccd2/dillcamsouth.
+#
 # Revision 1.1  2004/04/19 14:09:02  cjm
 # Initial revision
 #
