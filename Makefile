@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.4 2004-08-06 13:27:52 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.5 2004-10-13 20:01:45 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -18,6 +18,7 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	nuview.current.filter.properties \
 	ratcam.current.filter.properties ratcam.filter.properties \
 	supircam1.day_calibrate_state.properties supircam1.twilight_calibrate_state.properties \
+	supircam2.day_calibrate_state.properties supircam2.twilight_calibrate_state.properties \
 	supircam.current.filter.properties supircam.filter.properties \
 	ftspec1.day_calibrate_state.properties ftspec1.twilight_calibrate_state.properties \
 	spectrograph.day_calibrate_state.properties spectrograph.twilight_calibrate_state.properties \
@@ -48,6 +49,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.4  2004/08/06 13:27:52  cjm
+# Added backup target.
+#
 # Revision 1.3  2004/07/06 18:15:48  cjm
 # Added nuview1 files.
 #
