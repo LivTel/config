@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.1 2004-04-19 14:09:02 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.2 2004-05-24 18:28:21 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -7,9 +7,12 @@ BINDIR 		= $(LT_BIN_HOME)/$(CONFIG_DIR)
 
 CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	day_calibrate_state.properties twilight_calibrate_state.properties \
-	fartcam.current.filter.properties fartcam.filter.properties filter.properties \
+	fartcam.current.filter.properties fartcam.filter.properties \
+	dillcamsouth.current.filter.properties dillcamsouth.filter.properties \
+	filter.properties \
 	filters_lt_rat_CURRENT.properties filters_lt_rat_DB.properties \
 	ftccd1.day_calibrate_state.properties ftccd1.twilight_calibrate_state.properties \
+	ftccd2.day_calibrate_state.properties ftccd2.twilight_calibrate_state.properties \
 	ltccd2.day_calibrate_state.properties ltccd2.twilight_calibrate_state.properties \
 	ltccd3.day_calibrate_state.properties ltccd3.twilight_calibrate_state.properties \
 	nuview.current.filter.properties \
@@ -42,4 +45,7 @@ tidy:
 backup: tidy
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.1  2004/04/19 14:09:02  cjm
+# Initial revision
+#
 #
