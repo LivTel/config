@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.7 2005-11-29 18:50:09 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.8 2006-06-26 16:03:40 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -21,6 +21,7 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	supircam2.day_calibrate_state.properties supircam2.twilight_calibrate_state.properties \
 	supircam.current.filter.properties supircam.filter.properties \
 	ftspec1.day_calibrate_state.properties ftspec1.twilight_calibrate_state.properties \
+	ftspec2.day_calibrate_state.properties ftspec2.twilight_calibrate_state.properties \
 	spectrograph.day_calibrate_state.properties spectrograph.twilight_calibrate_state.properties \
 	nuview1.day_calibrate_state.properties nuview1.twilight_calibrate_state.properties \
 	ratcam1.day_calibrate_state.properties ratcam1.twilight_calibrate_state.properties
@@ -50,6 +51,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.7  2005/11/29 18:50:09  cjm
+# Added ratcam1.day_calibrate_state.properties ratcam1.twilight_calibrate_state.properties.
+#
 # Revision 1.6  2004/11/22 12:23:50  cjm
 # Added force option to cp to enable copy of checked in configs.
 #
