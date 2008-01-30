@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.10 2008-01-11 15:11:28 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.11 2008-01-30 19:54:28 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -26,24 +26,29 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	nuview1.day_calibrate_state.properties nuview1.twilight_calibrate_state.properties \
 	ratcam1.day_calibrate_state.properties ratcam1.twilight_calibrate_state.properties \
 	frodospec1.day_calibrate_state.properties frodospec1.twilight_calibrate_state.properties \
-	estar6.day_calibrate_state.properties estar6.twilight_calibrate_state.properties 
+	estar6.day_calibrate_state.properties estar6.twilight_calibrate_state.properties
+INI_SRCS 	= ap7p.ini ap7p-bias.ini
 CONFIG_OBJS	= $(CONFIG_SRCS:%.properties=$(BINDIR)/%.properties)
+INI_OBJS	= $(INI_SRCS:%.ini=$(BINDIR)/%.ini)
 
 top: config
 
-config: $(CONFIG_OBJS)
+config: $(CONFIG_OBJS) $(INI_OBJS)
 
 $(BINDIR)/%.properties: %.properties
 	$(CP) -f $< $@
 
+$(BINDIR)/%.ini: %.ini
+	$(CP) -f $< $@
+
 checkout:
-	$(CO) $(CO_OPTIONS) $(CONFIG_SRCS)
+	$(CO) $(CO_OPTIONS) $(CONFIG_SRCS) $(INI_SRCS)
 
 checkin:
-	-$(CI) $(CI_OPTIONS) $(CONFIG_SRCS)
+	-$(CI) $(CI_OPTIONS) $(CONFIG_SRCS) $(INI_SRCS)
 
 clean: tidy
-	-$(RM) $(RM_OPTIONS) $(CONFIG_OBJS)
+	-$(RM) $(RM_OPTIONS) $(CONFIG_OBJS) $(INI_OBJS)
 
 tidy:
 	-$(RM) $(RM_OPTIONS) $(TIDY_OPTIONS)
@@ -53,6 +58,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.10  2008/01/11 15:11:28  cjm
+# Added estar6 for FrodoSpec testing.
+#
 # Revision 1.9  2007/07/06 10:44:01  cjm
 # Added frodospec1.
 #
