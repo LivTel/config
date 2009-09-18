@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.11 2008-01-30 19:54:28 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.12 2009-09-18 15:14:17 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -25,7 +25,8 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	spectrograph.day_calibrate_state.properties spectrograph.twilight_calibrate_state.properties \
 	nuview1.day_calibrate_state.properties nuview1.twilight_calibrate_state.properties \
 	ratcam1.day_calibrate_state.properties ratcam1.twilight_calibrate_state.properties \
-	frodospec1.day_calibrate_state.properties frodospec1.twilight_calibrate_state.properties \
+	frodospec1.day_calibrate_state.red.properties frodospec1.day_calibrate_state.blue.properties \
+	frodospec1.twilight_calibrate_state.properties \
 	estar6.day_calibrate_state.properties estar6.twilight_calibrate_state.properties
 INI_SRCS 	= ap7p.ini ap7p-bias.ini
 CONFIG_OBJS	= $(CONFIG_SRCS:%.properties=$(BINDIR)/%.properties)
@@ -58,6 +59,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.11  2008/01/30 19:54:28  cjm
+# Added ini srcs for Meaburn .ini files.
+#
 # Revision 1.10  2008/01/11 15:11:28  cjm
 # Added estar6 for FrodoSpec testing.
 #
