@@ -1,5 +1,5 @@
 # Makefile
-# $Header: /home/cjm/cvs/config/Makefile,v 1.13 2012-07-10 13:50:40 cjm Exp $ 
+# $Header: /home/cjm/cvs/config/Makefile,v 1.14 2012-08-16 10:54:34 cjm Exp $ 
 include	../Makefile.common
 
 CONFIG_DIR	=config
@@ -31,7 +31,8 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	estar6.day_calibrate_state.properties estar6.twilight_calibrate_state.properties \
 	ringo1.day_calibrate_state.properties ringo1.twilight_calibrate_state.properties \
 	o.filter.properties o.current.filter.properties \
-	o1.day_calibrate_state.properties o1.twilight_calibrate_state.properties
+	o1.day_calibrate_state.properties o1.twilight_calibrate_state.properties \
+	rise.filter.properties rise.current.filter.properties
 
 INI_SRCS 	= ap7p.ini ap7p-bias.ini
 CONFIG_OBJS	= $(CONFIG_SRCS:%.properties=$(BINDIR)/%.properties)
@@ -64,6 +65,9 @@ backup: tidy
 	compress $(BACKUP_DIR)/config.tar
 #
 # $Log: not supported by cvs2svn $
+# Revision 1.13  2012/07/10 13:50:40  cjm
+# Added o1.day_calibrate_state.properties o1.twilight_calibrate_state.properties.
+#
 # Revision 1.12  2009/09/18 15:14:17  cjm
 # Added per-arm frodospec day_calibrate properties.
 #
