@@ -35,7 +35,8 @@ CONFIG_SRCS	= current5.filter.properties current.filter.properties \
 	rise.filter.properties rise.current.filter.properties \
 	ioi.filter.properties ioi.current.filter.properties \
 	ioi1.day_calibrate_state.properties ioi1.twilight_calibrate_state.properties \
-	moptop.current.filter.properties moptop.filter.properties
+	moptop.current.filter.properties moptop.filter.properties \
+	raptor.current.filter.properties raptor.filter.properties
 
 INI_SRCS 	= ap7p.ini ap7p-bias.ini
 CONFIG_OBJS	= $(CONFIG_SRCS:%.properties=$(BINDIR)/%.properties)
